@@ -8,6 +8,8 @@ export const userRegister = async (req,res)=>{
 
     let user = await User.findOne({email});
 
+    
+
     if(user) return res.status(404).json({
         success:false,
         message:"User Already exist.."
