@@ -1,5 +1,5 @@
 import express from 'express'
-import {userLogin,userRegister,useLogout,getMyProfile} from '../controllers/user.js'
+import {userLogin,userRegister,useLogout,getMyProfile,getUserById} from '../controllers/user.js'
 import { isAuthneticated } from '../middleware/auth.js';
 
 
@@ -18,5 +18,7 @@ router.post('/login',userLogin)
 
 router.get('/logout',useLogout)
 router.get('/myprofile',isAuthneticated,getMyProfile)
+
+router.get('/:id',getUserById);
 
 export default router
